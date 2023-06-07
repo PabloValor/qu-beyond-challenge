@@ -1,5 +1,8 @@
 # QU Challenge
 
+### Production link
+https://qu-beyond-challenge.vercel.app/
+
 ### Run in development mode
 ```yarn dev```
 
