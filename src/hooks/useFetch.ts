@@ -27,7 +27,8 @@ export default function useFetch<Response>(
         .catch(err => {
             const error : ApiError = {
                 message: errorMessage,
-                reason: `Error calling API with URL: ${url}` 
+                reason: `Error calling API with URL: ${url}`,
+                err
             }
             setError(error)
             setIsLoading(false)

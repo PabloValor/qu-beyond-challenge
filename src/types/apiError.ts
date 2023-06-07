@@ -3,4 +3,5 @@ export interface ApiError {
     reason?: string
     level?: number
     trace?: string
+    err: any
 }

@@ -1,4 +1,4 @@
-# qu-beyond-challenge
+# QU Challenge
 
 ### Run in development mode
 ```yarn dev```

@@ -1,4 +1,4 @@
-import { Planet, PlanetResponse } from "@/types/planet";
+import { Planet, PlanetResponse } from "../types/planet";
 
 export const mapPlanets = (planets: PlanetResponse) => { 
 
