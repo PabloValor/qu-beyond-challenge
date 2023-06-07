@@ -32,7 +32,6 @@ export default function Planet({ planet } : { planet : TPlanet }) {
             bg-[url('/img/bg-galaxy.png')] bg-center bg-cover bg-no-repeat
             relative
             hover:bottom-1
-            
         `}>
             <h2 className="font-bold text-center text-slate-50">{planet.name.toUpperCase()}</h2>
 
