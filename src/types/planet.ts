@@ -1,6 +1,3 @@
-import Film from "./film"
-import People  from "./people"
-
 export interface Planet {
     id?: string
     name: string
