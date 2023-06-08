@@ -30,7 +30,10 @@ function getFilms(filmUrls: string[]) {
     const promises = filmUrls.map(url => { 
         return fetch(url)
             .then(res => res.json())
-            .catch(err => { console.error(err) })
+            .catch(err => { 
+                // log error somewhere (datalog, newrelic)
+                console.error(err)
+            })
     })
 
     return Promise.all(promises)

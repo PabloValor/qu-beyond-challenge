@@ -39,6 +39,7 @@ export default function useFetch<Response>(
             }
             setError(error)
             setIsLoading(false)
+            // log error somewhere (datalog, newrelic)
         })
 
     }, [url])
