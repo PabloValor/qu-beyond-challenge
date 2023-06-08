@@ -1,5 +1,3 @@
-import { FaGithub } from "react-icons/fa"
-
 const Footer = () => {
     return (
     <footer className="bg-slate-900 text-slate-200 h-28 flex items-center place-content-center">
