@@ -5,15 +5,17 @@ https://qu-beyond-challenge.vercel.app/
 
 ### Run in development mode
 ```yarn dev```
+Navigate to ```http://localhost:3000```
 
 ### Run using Docker
-Install Docker on your machine.
+Install Docker on your machine.\
 Build your container: ```docker build -t qu-challenge .```\
 Run your container: ```docker run -p 3000:3000 qu-challenge```
 
 ### Stack 
 * React (using vite)
 * react-router-dom
+* Vitest for testing
 * TailwindCSS
 * react-icons
 * docker 

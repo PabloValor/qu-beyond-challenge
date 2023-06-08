@@ -23,6 +23,7 @@ const displayPopulationNumber = (population: string) => {
 
 export default function Planet({ planet } : { planet : TPlanet }) { 
 
+
     return (
         <div className={`
             p-3

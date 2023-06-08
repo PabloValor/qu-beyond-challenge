@@ -6,17 +6,28 @@ import { GiRingedPlanet } from 'react-icons/gi';
 import { LuOrbit } from 'react-icons/lu';
 import { FaGrav, FaWater} from 'react-icons/fa';
 import { TiWeatherDownpour } from 'react-icons/ti';
-import { MdTerrain } from 'react-icons/md';
-import { getPlanet } from "../../services/swapi";
+import { MdTerrain, MdOutlineLocalMovies } from 'react-icons/md';
+import { getFilms, getPlanet } from "../../services/swapi";
 import { Button } from "../../components/util/button";
+import { useEffect, useState } from "react";
+import Film from "../../types/film";
+import FilmsSkeleton from "../../components/skeleton/components/filmsSkeleton";
 
 export default function PlanetDetail() {
+    const [films, setFilms] = useState<Film[]>()
+
     const { id } = useParams(); 
     const { data, isLoading, error } = getPlanet(id)
 
+    useEffect(() => {
+      if (data) {
+        getFilms(data.films)
+          .then((data: Film[]) => setFilms(data))
+      }
+    }, [data])
+
     return (
       <>
-
         { error && <Error message={error.message}/> }
         { isLoading && <PlanetDetailsSkeleton/> }
         {
@@ -26,7 +37,7 @@ export default function PlanetDetail() {
             <div className={`my-4 h-64 shadow-lg rounded-lg w-full bg-[url('/img/bg-galaxy.png')] bg-center bg-cover bg-no-repeat overflow-hidden`}>
               <img src={`/img/planet-${data.id}.svg`} className='w-[250px] block mx-auto'/>
             </div>
-            <div className='sm:block md:flex place-content-evenly gap-4 '>
+            <div className='sm:block md:flex place-content-evenly gap-4 mb-4'>
 
               <div className='bg-slate-300 p-4 rounded-lg shadow-lg w-full max-sm:mb-3 md:mb-0'>
 
@@ -80,14 +91,40 @@ export default function PlanetDetail() {
                 </div>
               </div>
             </div>
+            { !films && <FilmsSkeleton/> }
+            {
+              films && 
+              <div className='bg-slate-300 p-4 rounded-lg shadow-lg w-full'>
+                  <div className="text-center font-bold text-2xl pb-5 uppercase">{`${data.name} appers in the following movies`}</div>
+                  <div className="flex gap-4 flex-row flex-wrap place-content-center">
+                    { 
+                      films.map((film: Film) => (
+                        <div key={film.title} className="bg-slate-800 text-slate-100 p-1 rounded-lg shadow-md w-1/4">
+                          <div className='m-2 uppercase'>
+                              <MdOutlineLocalMovies className='inline-block mr-1 text-2xl'/><span className='font-bold'>{film.title}</span>
+                          </div> 
+                          <div className='m-2'>
+                              Director: <span className='font-bold'>{film.director}</span>
+                          </div> 
+                          <div className='m-2'>
+                              Producer: <span className='font-bold'>{film.producer}</span>
+                          </div> 
+                        </div>
+                      ))
+                    }
+                  </div>
+
+              </div>
+            }
+
+
+            <div className='text-center mt-5'>
+              <Button>
+                <Link to='/'>Back</Link>
+              </Button>
+            </div>
           </>
         }
-
-        <div className='text-center mt-5'>
-          <Button styles="">
-            <Link to='/'>Back</Link>
-          </Button>
-        </div>
      </>
     )
   }

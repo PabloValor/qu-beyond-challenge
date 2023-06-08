@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react"
 import { ApiError } from "../types/apiError"
 
+interface UseFetchResponse<T> { 
+    data: T | undefined 
+    error: ApiError | undefined
+    isLoading: boolean
+}
+
 export default function useFetch<Response>(
     { url, errorMessage, mapper }
     : { url : string, errorMessage: string, mapper?: Function }
     )
+    : UseFetchResponse<Response>
 { 
     const [data, setData] = useState<Response>()
     const [error, setError] = useState<ApiError>()

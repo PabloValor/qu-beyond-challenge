@@ -12,8 +12,8 @@ export interface Planet {
     climate: string
     terrain: string
     surface_water: string
-    residents: People[]
-    films: Film[]
+    residents: string[]
+    films: any[]
     url: string
     created: string
     edited: string

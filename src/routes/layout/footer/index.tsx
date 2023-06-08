@@ -1,8 +1,6 @@
 import { FaGithub } from "react-icons/fa"
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear()
-
     return (
     <footer className="bg-slate-900 text-slate-200 h-28 flex items-center place-content-center">
         <h3 className="font-bold">
@@ -10,7 +8,7 @@ const Footer = () => {
                 <FaGithub className="inline-block mr-1" />
                 Check repo 
             </a>
-            {` | QuBeyond Challenge | ${currentYear}`} 
+            {` | Pablo Valor | QuBeyond Challenge - 2023`} 
         </h3>
     </footer>
 
@@ -18,5 +16,4 @@ const Footer = () => {
 
 }
     
-
 export default Footer

@@ -1,4 +1,4 @@
-import Planets from "../../components/planets";
+import Planets from "../../components/planets/planets";
 
 export default function HomePage () { 
     
