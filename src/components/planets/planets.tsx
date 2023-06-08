@@ -5,6 +5,7 @@ import { getPlanets } from "../../services/swapi"
 import { Button } from "../util/button"
 import { useState } from "react"
 import { useSearchParams } from "react-router-dom";
+import { Error } from '../../components/util/error'
 
 
 export default function Planets() {
@@ -27,7 +28,7 @@ export default function Planets() {
     <>
       { isLoading && <PlanetsSkeleton/> }
 
-      { error && <h1>{error.message}</h1> }
+      { error && <Error message={error.message}/> }
 
       <div className={`flex flex-wrap place-content-center gap-8`}>
         {
