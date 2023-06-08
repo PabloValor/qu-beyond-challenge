@@ -8,6 +8,7 @@ import Film from "../../types/film";
 import FilmsSkeleton from "../../components/skeleton/components/filmsSkeleton";
 import PlanetProperties from "../../components/planets/properties";
 import Films from "../../components/planets/films";
+import { getRandomImageId } from "../../util";
 
 export default function PlanetDetail() {
     const [films, setFilms] = useState<Film[]>()
@@ -31,14 +32,14 @@ export default function PlanetDetail() {
           <>
             <h2 className='uppercase font-extrabold text-center text-[30px]'>{data.name}</h2>
             <div className={`my-4 h-64 shadow-lg rounded-lg w-full bg-[url('/img/bg-galaxy.png')] bg-center bg-cover bg-no-repeat overflow-hidden`}>
-              <img src={`/img/planet-${data.id}.svg`} className='w-[250px] block mx-auto'/>
+              <img src={`/img/planet-${getRandomImageId()}.svg`} className='w-[250px] block mx-auto'/>
             </div>
 
             <PlanetProperties planet={data} />
 
             { !films && <FilmsSkeleton/> }
             {
-              films && 
+              films && films.length > 0 && 
               <div className='bg-slate-300 p-4 rounded-lg shadow-lg w-full'>
                   <div className="text-center font-bold text-2xl pb-5 uppercase">{`planet ${data.name} appers in the following movies`}</div>
                   <div className="md:flex sm:block gap-4 flex-row flex-wrap place-content-center">

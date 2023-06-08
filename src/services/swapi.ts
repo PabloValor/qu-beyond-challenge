@@ -4,9 +4,9 @@ import { mapPlanet, mapPlanets } from "./mappers"
 
 const WSAPI_BASE_URL = 'https://swapi.dev/api'
 
-function getPlanets() { 
+function getPlanets(page: string) { 
 
-    const source = `${WSAPI_BASE_URL}/planets`
+    const source = `${WSAPI_BASE_URL}/planets?page=${page}`
     const errorMessage = 'something went wrong trying to get planets resource 🪐'
 
     const response = useFetch<PlanetResponse>({ url: source, errorMessage, mapper: mapPlanets })
