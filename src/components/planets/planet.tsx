@@ -52,28 +52,28 @@ export default function Planet({ planet } : { planet : TPlanet }) {
 
     function Image({ planet } : {planet : TPlanet}) { 
         return (
-            <div className="relative">
-                <img src={`/img/planet-${planet.id}.svg`}
-                alt={`Image of planet ${planet.name}`}
-                title={`Image of planet ${planet.name}`}
-                className={`
-                    block my-4 mx-auto w-[200px]
-                `}
-                />
-                <div className={`
-                    absolute top-0 bottom-0 left-0 right-0
-                    flex align-middle items-center justify-around	
-                    opacity-0
-                    hover:opacity-100 
-                    `
-                }>
-                    <Button>
-                        <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`}>
-                            {`show more`.toUpperCase()}
-                        </Link>
-                    </Button>
+            <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`}>
+                <div className="relative">
+                    <img src={`/img/planet-${planet.id}.svg`}
+                    alt={`Image of planet ${planet.name}`}
+                    title={`Image of planet ${planet.name}`}
+                    className={`
+                        block my-4 mx-auto w-[200px]
+                    `}
+                    />
+                    <div className={`
+                        absolute top-0 bottom-0 left-0 right-0
+                        flex align-middle items-center justify-around	
+                        opacity-0
+                        hover:opacity-100 
+                        `
+                    }>
+                        <Button>
+                                {`show more`.toUpperCase()}
+                        </Button>
+                    </div>
                 </div>
-            </div>
+            </Link>
         )
     }
 }

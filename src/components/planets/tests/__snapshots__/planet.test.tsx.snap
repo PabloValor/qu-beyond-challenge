@@ -17,39 +17,39 @@ exports[`<Planet /> > should match snapshot 1`] = `
   >
     EARTH
   </h2>
-  <div
-    className="relative"
+  <a
+    href="/planet/earth/123"
+    onClick={[Function]}
   >
-    <img
-      alt="Image of planet Earth"
-      className="
-                    block my-4 mx-auto w-[200px]
-                "
-      src="/img/planet-123.svg"
-      title="Image of planet Earth"
-    />
     <div
-      className="
-                    absolute top-0 bottom-0 left-0 right-0
-                    flex align-middle items-center justify-around	
-                    opacity-0
-                    hover:opacity-100 
-                    "
+      className="relative"
     >
+      <img
+        alt="Image of planet Earth"
+        className="
+                        block my-4 mx-auto w-[200px]
+                    "
+        src="/img/planet-123.svg"
+        title="Image of planet Earth"
+      />
       <div
         className="
+                        absolute top-0 bottom-0 left-0 right-0
+                        flex align-middle items-center justify-around	
+                        opacity-0
+                        hover:opacity-100 
+                        "
+      >
+        <div
+          className="
         \\"bg-blue-500 bg-blue-700 hover:bg-blue-500 uppercase text-white font-bold py-2 px-4 rounded inline-block 
         "
-      >
-        <a
-          href="/planet/earth/123"
-          onClick={[Function]}
         >
           SHOW MORE
-        </a>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
   <div
     className="
         text-zinc-50

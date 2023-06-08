@@ -49,12 +49,14 @@ export default function PlanetDetail() {
             }
 
             <div className='text-center mt-5'>
-              <Button>
-                <Link to='/'>Back</Link>
-              </Button>
+                <Link to='/'>
+                  <Button>
+                    Back
+                  </Button>
+                </Link>
             </div>
           </>
         }
      </>
     )
-  }
+}
