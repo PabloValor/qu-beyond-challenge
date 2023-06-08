@@ -1,5 +1,4 @@
 import useFetch from "../hooks/useFetch"
-import Film from "../types/film"
 import { Planet, PlanetResponse } from "../types/planet"
 import { mapPlanet, mapPlanets } from "./mappers"
 

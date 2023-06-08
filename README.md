@@ -17,7 +17,6 @@ Navigate to ```http://localhost:3000```
 ### Stack 
 * React (using vite)
 * react-router-dom
-* Vitest for testing
 * TailwindCSS
 * react-icons
 * docker 

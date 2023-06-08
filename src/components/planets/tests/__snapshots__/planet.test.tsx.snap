@@ -1,0 +1,114 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Planet /> > should match snapshot 1`] = `
+<div
+  className="
+            p-3
+            rounded-md shadow-lg
+            cursor-pointer
+            w-full md:max-w-[300px]
+            bg-[url('/img/bg-galaxy.png')] bg-center bg-cover bg-no-repeat
+            relative
+            hover:bottom-1
+        "
+>
+  <h2
+    className="font-bold text-center text-slate-50"
+  >
+    EARTH
+  </h2>
+  <div
+    className="relative"
+  >
+    <img
+      alt="Image of planet Earth"
+      className="
+                    block my-4 mx-auto w-[200px]
+                "
+      src="/img/planet-123.svg"
+      title="Image of planet Earth"
+    />
+    <div
+      className="
+                    absolute top-0 bottom-0 left-0 right-0
+                    flex align-middle items-center justify-around	
+                    opacity-0
+                    hover:opacity-100 
+                    "
+    >
+      <div
+        className="
+        \\"bg-blue-500 bg-blue-700 hover:bg-blue-500 uppercase text-white font-bold py-2 px-4 rounded inline-block 
+        "
+      >
+        <a
+          href="/planet/earth/123"
+          onClick={[Function]}
+        >
+          SHOW MORE
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    className="
+        text-zinc-50
+        inline-block p-1 rounded-md shadow-md font-bold bg-gradient-to-r from-blue-500 to-violet-500 mr-1
+        "
+  >
+    <svg
+      className="inline-block mr-1"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M416 0c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm0 128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm-160-16C256 50.1 205.9 0 144 0S32 50.1 32 112v166.5C12.3 303.2 0 334 0 368c0 79.5 64.5 144 144 144s144-64.5 144-144c0-34-12.3-64.9-32-89.5V112zM144 448c-44.1 0-80-35.9-80-80 0-25.5 12.2-48.9 32-63.8V112c0-26.5 21.5-48 48-48s48 21.5 48 48v192.2c19.8 14.8 32 38.3 32 63.8 0 44.1-35.9 80-80 80zm16-125.1V112c0-8.8-7.2-16-16-16s-16 7.2-16 16v210.9c-18.6 6.6-32 24.2-32 45.1 0 26.5 21.5 48 48 48s48-21.5 48-48c0-20.9-13.4-38.5-32-45.1z"
+      />
+    </svg>
+    <span>
+      Temperate
+    </span>
+  </div>
+  <div
+    className="
+        text-zinc-50
+        inline-block p-1 rounded-md shadow-md font-bold bg-gradient-to-r from-blue-500 to-violet-500 mr-1
+        "
+  >
+    <svg
+      className="inline-block mr-1"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M337.454 232c33.599 0 61.092-27.002 61.092-60 0-32.997-27.493-60-61.092-60s-61.09 27.003-61.09 60c0 32.998 27.491 60 61.09 60zm-162.908 0c33.599 0 61.09-27.002 61.09-60 0-32.997-27.491-60-61.09-60s-61.092 27.003-61.092 60c0 32.998 27.493 60 61.092 60zm0 44C126.688 276 32 298.998 32 346v54h288v-54c0-47.002-97.599-70-145.454-70zm162.908 11.003c-6.105 0-10.325 0-17.454.997 23.426 17.002 32 28 32 58v54h128v-54c0-47.002-94.688-58.997-142.546-58.997z"
+      />
+    </svg>
+    <span
+      title="population: 7800000000"
+    >
+      7800M
+    </span>
+  </div>
+</div>
+`;
