@@ -22,7 +22,8 @@ Navigate to ```http://localhost:3000```
 * docker 
 
 ### Technical decisions
-I decided to create this app as a ```SPA``` web app instead of using a framework with Server Side Rendering like ```Next.js```. I made this decision because I believe that the main focus of the challenge is to evaluate how I fetch and manage data on the frontend side. 
+I decided to create this app as a ```SPA``` web app instead of using a framework with Server Side Rendering like ```Next.js```. I made this decision because I believe that the main focus of the challenge is to evaluate how I fetch and manage data on the frontend side.
+(I added some images of planets just to make the graphical interface look nicer.)
 
 ---
 
