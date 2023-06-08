@@ -14,7 +14,7 @@ export default function PlanetProperties({ planet } : { planet: Planet}) {
 
           <div className='uppercase my-4'>
             <span className='bg-slate-50 p-2 mr-1 rounded-md font-bold'>
-              <IoIosResize className='inline-block text-2xl mr-1'/> Diameter: <span className='font-bold'>{planet.diameter}</span>
+              <IoIosResize className='inline-block text-2xl mr-1'/> Diameter: <span className='font-bold' >{planet.diameter}</span>
             </span>
           </div>
 
