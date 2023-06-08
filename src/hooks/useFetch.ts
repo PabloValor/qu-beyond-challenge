@@ -18,6 +18,7 @@ export default function useFetch<Response>(
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
+        setData(undefined)
         setIsLoading(true)
 
         fetch(url)

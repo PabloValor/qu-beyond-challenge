@@ -20,6 +20,7 @@ export default function Planets() {
     const page = subtractPage(url) 
     setPage(page)
     setSearchParams({p: page})
+    window.scrollTo(0, 0)
   }
 
   return (
