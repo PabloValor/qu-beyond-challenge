@@ -1,6 +1,6 @@
-import { describe, test, expect } from 'vitest'
-import { render } from '@testing-library/react'
-import Planet from '../planet'
+import { test, expect } from 'vitest'
+import { cleanup, render } from '@testing-library/react'
+import Planet, { displayPopulationNumber } from '../planet'
 import { Planet as TPlanet } from '../../../types/planet';
 import { MemoryRouter } from 'react-router-dom';
 import { ReactTestRenderer, ReactTestRendererJSON, create } from 'react-test-renderer'
@@ -29,28 +29,36 @@ function toJson(component: ReactTestRenderer) {
     return result as ReactTestRendererJSON
 }
 
-describe('<Planet />', () => {
 
-    test('should match snapshot', () => { 
-        const component = create(
-        <MemoryRouter>
-            <Planet planet={planetMock}/>
-        </MemoryRouter>
-        )
-        let json = toJson(component)
-        expect(json).toMatchSnapshot() 
-    })
+const renderComponent = () => render( <MemoryRouter> <Planet planet={planetMock}/></MemoryRouter> )
 
-    test('Planet mounts properly', () => {
-        const wrapper = render(<MemoryRouter> <Planet planet={planetMock}/></MemoryRouter> )
-        expect(wrapper).toBeTruthy()
+let climate: any,
+    population: any
+    = undefined
 
-        const span = wrapper.container.querySelector('span')
-        expect(span?.textContent).toBe(planetMock.climate)
 
-        // const text = screen.getByText(
-        //   /Click on the Vite and React logos to learn more/i
-        // );
-        // expect(text.textContent).toBeTruthy()
-    })
-});
+beforeEach(() => { 
+    const { getByTestId } = renderComponent()
+    climate = getByTestId('climate') 
+    population = getByTestId('population') 
+
+})
+
+afterEach(() => {
+    cleanup()
+})
+
+test('should match snapshot', () => { 
+    const component = create(
+    <MemoryRouter>
+        <Planet planet={planetMock}/>
+    </MemoryRouter>
+    )
+    let json = toJson(component)
+    expect(json).toMatchSnapshot() 
+})
+
+test('Planet properties', () => {
+    expect(planetMock.climate).equals(climate)
+    expect(displayPopulationNumber(planetMock.population)).equals(population)
+})

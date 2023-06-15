@@ -7,7 +7,7 @@ import slugify from 'slugify'
 import { Link } from "react-router-dom"
 import { getRandomImageId } from "../../util"
 
-const displayPopulationNumber = (population: string) => {
+export const displayPopulationNumber = (population: string) => {
 
     const number = Number(population)
 
@@ -41,11 +41,11 @@ export default function Planet({ planet } : { planet : TPlanet }) {
 
             <Badget styles="mr-1">
                 <FaTemperatureHigh className="inline-block mr-1"/>
-                <span>{planet.climate}</span>
+                <span data-testid="climate">{planet.climate}</span>
             </Badget>
             <Badget styles="mr-1">
                 <IoMdPeople className="inline-block mr-1"/>
-                <span title={`population: ${planet.population}`}>{displayPopulationNumber(planet.population)}</span>
+                <span data-testid="population" title={`population: ${planet.population}`}>{displayPopulationNumber(planet.population)}</span>
             </Badget>
             
         </div>

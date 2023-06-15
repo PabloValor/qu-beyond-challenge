@@ -11,19 +11,19 @@ return result as ReactTestRendererJSON
 
 describe('<Planets />', () => {
 
-test('should match snapshot', () => { 
-    const component = create(
-    <MemoryRouter>
-        <Planets/>
-    </MemoryRouter>
-    )
-    let json = toJson(component)
-    expect(json).toMatchSnapshot() 
-})
+    test('should match snapshot', () => { 
+        const component = create(
+        <MemoryRouter>
+            <Planets/>
+        </MemoryRouter>
+        )
+        let json = toJson(component)
+        expect(json).toMatchSnapshot() 
+    })
 
-test('Planets mounts properly', () => {
-    const wrapper = render(<MemoryRouter> <Planets/></MemoryRouter> )
-    expect(wrapper).toBeTruthy()
+    test('Planets mounts properly', () => {
+        const wrapper = render(<MemoryRouter> <Planets/></MemoryRouter> )
+        expect(wrapper).toBeTruthy()
 
-})
+    })
 });
