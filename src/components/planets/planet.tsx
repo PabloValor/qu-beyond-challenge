@@ -55,7 +55,7 @@ export default function Planet({ planet } : { planet : TPlanet }) {
         return (
             <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`}>
                 <div className="relative">
-                    <img src={`/img/planet-${getRandomImageId()}.svg`}
+                    <img src={`/img/planet-${getRandomImageId(Number(planet.id))}.svg`}
                     alt={`Image of planet ${planet.name}`}
                     title={`Image of planet ${planet.name}`}
                     className={`

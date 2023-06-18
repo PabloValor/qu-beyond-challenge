@@ -32,7 +32,7 @@ export default function PlanetDetail() {
           <>
             <h2 className='uppercase font-extrabold text-center text-[30px]'>{data.name}</h2>
             <div className={`my-4 h-64 shadow-lg rounded-lg w-full bg-[url('/img/bg-galaxy.png')] bg-center bg-cover bg-no-repeat overflow-hidden`}>
-              <img src={`/img/planet-${getRandomImageId()}.svg`} className='w-[250px] block mx-auto'/>
+              <img src={`/img/planet-${getRandomImageId(Number(data.id))}.svg`} className='w-[250px] block mx-auto'/>
             </div>
 
             <PlanetProperties planet={data} />

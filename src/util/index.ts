@@ -1,4 +1,4 @@
-const getRandomImageId = () => Math.round(Math.random() * (9)) + 1;
+const getRandomImageId = (id: number = 1) => id % 10;
 
 export { 
     getRandomImageId
