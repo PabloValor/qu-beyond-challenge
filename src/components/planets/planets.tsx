@@ -6,6 +6,7 @@ import { Button } from "../util/button"
 import { useState } from "react"
 import { useSearchParams } from "react-router-dom";
 import { Error } from '../../components/util/error'
+import { goToTop } from "../../util"
 
 
 export default function Planets() {
@@ -21,7 +22,7 @@ export default function Planets() {
     const page = subtractPage(url) 
     setPage(page)
     setSearchParams({p: page})
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    goToTop()
   }
 
   return (

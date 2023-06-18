@@ -8,7 +8,7 @@ import Film from "../../types/film";
 import FilmsSkeleton from "../../components/skeleton/components/filmsSkeleton";
 import PlanetProperties from "../../components/planets/properties";
 import Films from "../../components/planets/films";
-import { getRandomImageId } from "../../util";
+import { getRandomImageId, goToTop } from "../../util";
 
 export default function PlanetDetail() {
     const [films, setFilms] = useState<Film[]>()
@@ -50,7 +50,7 @@ export default function PlanetDetail() {
             }
 
             <div className='text-center mt-5'>
-                <Link to='/' onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}>
+                <Link to='/' onClick={() => {goToTop()}}>
                   <Button>
                     Back
                   </Button>

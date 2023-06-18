@@ -5,7 +5,7 @@ import { IoMdPeople } from 'react-icons/io'
 import { Button } from "../util/button"
 import slugify from 'slugify'
 import { Link } from "react-router-dom"
-import { getRandomImageId } from "../../util"
+import { getRandomImageId, goToTop } from "../../util"
 
 export const displayPopulationNumber = (population: string) => {
 
@@ -53,7 +53,7 @@ export default function Planet({ planet } : { planet : TPlanet }) {
 
     function Image({ planet } : {planet : TPlanet}) { 
         return (
-            <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`} onClick={() => { window.scrollTo({top: 0, left: 0, behavior: 'smooth'}) }}>
+            <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`} onClick={() => {goToTop()}}>
                 <div className="relative">
                     <img src={`/img/planet-${getRandomImageId(Number(planet.id))}.svg`}
                     alt={`Image of planet ${planet.name}`}
