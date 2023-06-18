@@ -50,7 +50,7 @@ export default function PlanetDetail() {
             }
 
             <div className='text-center mt-5'>
-                <Link to='/'>
+                <Link to='/' onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}>
                   <Button>
                     Back
                   </Button>

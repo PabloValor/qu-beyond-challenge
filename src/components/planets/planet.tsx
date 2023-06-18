@@ -53,7 +53,7 @@ export default function Planet({ planet } : { planet : TPlanet }) {
 
     function Image({ planet } : {planet : TPlanet}) { 
         return (
-            <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`}>
+            <Link to={`/planet/${slugify(planet.name, { lower: true })}/${planet.id}`} onClick={() => { window.scrollTo({top: 0, left: 0, behavior: 'smooth'}) }}>
                 <div className="relative">
                     <img src={`/img/planet-${getRandomImageId(Number(planet.id))}.svg`}
                     alt={`Image of planet ${planet.name}`}
